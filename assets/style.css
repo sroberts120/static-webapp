@@ -1,0 +1,162 @@
+@font-face {
+    font-family: OSGill;
+    src: url('./fonts/OSGill-Regular.woff2') format('woff2'),
+    url('./fonts/OSGill-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
+    font-family: Source Sans Pro,sans-serif;
+    color: #453c90;
+    display: flex;
+    flex-direction: column;
+}
+h1, h3 {
+    font-family: OSGill,Source Sans Pro,sans-serif;
+    font-weight: normal;
+}
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-top: 0;
+}
+h3 {
+    font-size: 1.125rem;
+}
+p, ul {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.6;
+    margin: 0;
+}
+ul {
+    list-style: none;
+    padding-left: 16px;
+    margin: 0;
+}
+ul li::before {
+    content: "\2012";
+    padding-right: 10px;
+}
+nav {
+    background: #fff;
+    flex: 0 0 auto;
+    display: flex;
+    z-index: 5;
+    flex-grow: 0;
+    flex-wrap: nowrap;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    min-height: 65px;
+    align-items: center;
+}
+a.logo {
+    color: #453c90;
+}
+.logo {
+    display: flex;
+    cursor: pointer;
+    margin-left: 24px;
+    padding-top: 16px;
+    white-space: nowrap;
+    padding-right: 20px;
+    letter-spacing: 0.4px;
+    padding-bottom: 16px;
+    justify-content: center;
+    text-decoration: none;
+}
+.logo img {
+    padding-right: 16px;
+    margin-right: 16px;
+    border-right: solid #453c90 1px;
+}
+.logo h3 {    
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+footer {
+    border-top: solid #ddd 1px;
+    background: #fff;
+    padding: 20px 40px;
+    color: #666;
+}
+.content {
+    background-color: #f9faf2;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 50px;
+    min-height: 500px;
+}
+.inner {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1259px;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    min-height: 310px;
+}
+.notice {
+    width: 640px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    z-index: 5;
+    min-height: 500px;    
+}
+.map {
+    flex: 0 0;
+    height: 100%;
+    position: relative;
+    left: -150px;
+    min-height: 520px;
+}
+@media (orientation: portrait), (max-width: 667px) and (max-height: 667px) {
+    .content {
+        background: rgba(255,255,255,0.6) url("./img/open-roads-britain-1.jpg") no-repeat scroll right;
+        background-position: left;
+        background-size: cover;
+        background-blend-mode: lighten;
+    }
+    @supports not (background-blend-mode: lighten) {
+        .content {
+            padding: 0;
+        }
+        .inner {
+            padding: 0 16px;
+            background: rgba(255,255,255,0.6);
+        }
+    }
+    .notice {
+        flex: 1;
+        min-height: unset;
+    }
+    .map {
+        display: none;
+    }
+}
+@media (max-width: 666px) {
+    .content {
+        padding: 0 16px;
+    }
+    h1 {
+        font-size: 1.875rem;
+    }
+    p, ul {
+        font-size: 0.875rem;
+    }
+    .logo {
+        margin-left: 16px;
+    }
+    footer {
+        padding: 16px 16px 20px 16px;
+    }
+}
