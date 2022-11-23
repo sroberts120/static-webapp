@@ -2,7 +2,7 @@
   "trailingSlash": "auto",
   "routes": [
     {
-      "route": "/*",
+      "route": "/aa",
       "rewrite": "/index.html"
     }
   ],
@@ -15,7 +15,6 @@
     },
     "401": {
       "redirect": "/index.html",
-      "statusCode": 302
     },
     "403": {
       "rewrite": "/index.html"
